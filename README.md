@@ -7,6 +7,6 @@ It's a great dataset for evaluating simple regression models.
 
 ## Source Link
 
-<a href="https://www.kaggle.com/datasets/harlfoxem/housesalesprediction" target="_blank">LINK</a>
+<a href="https://www.kaggle.com/datasets/harlfoxem/housesalesprediction" target="_blank">Kaggle House Sales in King County</a>
 
 
