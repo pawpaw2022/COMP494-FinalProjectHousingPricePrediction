@@ -112,11 +112,6 @@ fig = plt.figure()
 res = probplot(housing_df['price'], plot=plt)
 plt.show()
 
-#We use the numpy fuction log1p which  applies log(1+x) to all elements of the column
-# housing_df["price"] = np.log1p(housing_df["price"])
-# housing_df_1 = housing_df.columns.difference(['zipcode', 'long', 'lat'])
-# housing_df_1["price"] = np.log1p(housing_df_1["price"])
-
 # Select the numeric columns to include in normalization
 numeric_columns = housing_df.select_dtypes(include=[np.number]).columns
 exclude_columns = ['zipcode', 'lat', 'long']
@@ -183,12 +178,7 @@ lam = 0.15
 for feat in skewed_features:
     #all_data[feat] += 1
     housing_df[feat] = boxcox1p(housing_df[feat], lam)
-    
-#all_data[skewed_features] = np.log1p(all_data[skewed_features])
 
-df_normalized.head()
-
-#housing_df = pd.get_dummies(housing_df) # drop date column first, make sure the date range is small 
 df_normalized.head()
 
 """# Data Analytics"""
@@ -222,12 +212,6 @@ y_train.shape
 x_test.shape
 
 y_test.shape
-
-# y_train = train_data["price"]
-# x_train = train_data[train_data.columns.difference(['price'])]
-
-# y_test = test_data["price"]
-# x_test = test_data[train_data.columns.difference(['price'])]
 
 lr_w_int = LinearRegression()
 lr_no_int = LinearRegression(fit_intercept=False)
